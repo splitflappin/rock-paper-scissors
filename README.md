@@ -47,4 +47,14 @@ ELSE
   let the human know that they lost
   give a point to the computer
 
-start a new round
+## Logic to play the game. Keeps tracks of the rounds 
+When playGame function is ran the game starts
+
+A variable will be created to track the rounds. 
+
+LOOP through 
+
+IF rounds are less than 5
+  play another round
+ElSE 
+  the player who has the most wins is declared the winner

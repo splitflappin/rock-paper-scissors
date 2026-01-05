@@ -2,4 +2,4 @@
 *.md
 
 # ignore all html files
-*.html
+# *.html
