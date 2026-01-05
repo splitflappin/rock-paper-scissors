@@ -1,0 +1,5 @@
+# ignore all markup files
+*.md
+
+# ignore all html files
+*.html
