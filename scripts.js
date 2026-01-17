@@ -1,9 +1,9 @@
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * 3);
 
-  if (randomNum == 0) {
+  if (randomNum === 0) {
     return "Rock";
-  } else if (randomNum == 1) {
+  } else if (randomNum === 1) {
     return "Paper";
   } else {
     return "Scissors";
@@ -13,11 +13,11 @@ function getComputerChoice() {
 function getHumanChoice(instructions = "Rock Paper or Scissors?") {
   let pick = prompt(instructions);
 
-  if (pick.toLowerCase() == "rock") {
+  if (pick.toLowerCase() === "rock") {
     return "Rock";
-  } else if (pick.toLowerCase() == "paper") {
+  } else if (pick.toLowerCase() === "paper") {
     return "Paper";
-  } else if (pick.toLowerCase() == "scissors") {
+  } else if (pick.toLowerCase() === "scissors") {
     return "Scissors";
   } else {
     getHumanChoice("Invalid choice. Must be either paper, rock, or scissors");
@@ -25,15 +25,15 @@ function getHumanChoice(instructions = "Rock Paper or Scissors?") {
 }
 
 function playRound(humanChoice, computerChoice) {
-  if (humanChoice == computerChoice) {
+  if (humanChoice === computerChoice) {
     console.log(`Tie, you both selected ${humanChoice}`);
-  } else if ((humanChoice == "Paper") & (computerChoice == "Rock")) {
+  } else if ((humanChoice === "Paper") & (computerChoice == "Rock")) {
     humanScore += 1;
     console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-  } else if ((humanChoice == "Scissors") & (computerChoice == "Paper")) {
+  } else if ((humanChoice === "Scissors") & (computerChoice === "Paper")) {
     humanScore += 1;
     console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-  } else if (humanChoice == "Rock" && computerChoice == "Scissors") {
+  } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
     humanScore += 1;
     console.log(`You win! ${humanChoice} beats ${computerChoice}`);
   } else {
@@ -53,7 +53,7 @@ function playGame() {
   } else {
     if (humanScore > computerScore) {
       return console.log("Game over: you win!");
-    } else if (humanScore == computerScore) {
+    } else if (humanScore === computerScore) {
       return console.log("Game over: it's a tie");
     } else {
       return console.log("Game over: you lose!");
