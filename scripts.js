@@ -38,18 +38,30 @@ function playRound(humanChoice, computerChoice) {
     computerScore += 1;
     resultEl.textContent = `Tie, you both selected ${humanChoice}`;
   } else if ((humanChoice === "Paper") & (computerChoice === "Rock")) {
-    resultEl.textContent = `You win! Your pick ${humanChoice} beats ${computerChoice}`;
+    resultEl.textContent = `You win round! Your pick ${humanChoice} beats ${computerChoice}`;
     humanScore += 1;
   } else if ((humanChoice === "Scissors") & (computerChoice === "Paper")) {
-    resultEl.textContent = `You win! Your pick ${humanChoice} beats ${computerChoice}`;
+    resultEl.textContent = `You win round! Your pick ${humanChoice} beats ${computerChoice}`;
     humanScore += 1;
   } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
     humanScore += 1;
-    resultEl.textContent = `You win! Your pick ${humanChoice} beats ${computerChoice}`;
+    resultEl.textContent = `You win round! Your pick ${humanChoice} beats ${computerChoice}`;
   } else {
-    resultEl.textContent = `You lose! Your pick ${humanChoice} loses to ${computerChoice}`;
+    resultEl.textContent = `You lose round! Your pick ${humanChoice} loses to ${computerChoice}`;
     computerScore += 1;
   }
 
   scoreEl.textContent = `Your score ${humanScore} Computer score ${computerScore}`;
+
+  if (humanScore === 5 || computerScore === 5) {
+    if (humanScore === computerScore) {
+      resultEl.textContent = `Game Over: Tie`;
+    } else if (humanScore > computerScore) {
+      resultEl.textContent = `Game over: Human wins`;
+    } else {
+      resultEl.textContent = `Game over: Computer wins`;
+    }
+    humanScore = 0;
+    computerScore = 0;
+  }
 }
